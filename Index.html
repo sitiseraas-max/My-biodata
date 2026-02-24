@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Biodata | Siti Sera Asmanih</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:linear-gradient(135deg,#eaf6ff,#ffffff);
+  color:#333;
+}
+
+/* TOP BAR */
+.topbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(14px);
+  z-index:1000;
+}
+
+.topbar h2{
+  color:#3a7fc4;
+  font-weight:600;
+}
+
+/* THREE DOT */
+.menu-btn{
+  font-size:26px;
+  cursor:pointer;
+  color:#3a7fc4;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:fixed;
+  top:70px;
+  right:25px;
+  background:#ffffff;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  width:180px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(-10px);
+  pointer-events:none;
+  transition:0.35s ease;
+}
+
+.dropdown.active{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.dropdown a{
+  display:block;
+  padding:14px 20px;
+  text-decoration:none;
+  color:#4a7fb8;
+  transition:0.3s;
+}
+
+.dropdown a:hover{
+  background:#f2f8ff;
+}
+
+/* SECTION */
+section{
+  max-width:900px;
+  margin:auto;
+  padding:120px 25px 70px;
+}
+
+/* HOME */
+.home{
+  display:flex;
+  gap:35px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.photo img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid #d8ecff;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.photo img:hover{
+  transform:scale(1.05);
+}
+
+.home h1{
+  color:#3a7fc4;
+  font-weight:600;
+}
+
+.home p{
+  color:#6faee6;
+  margin-top:6px;
+}
+
+/* BIODATA */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#ffffff;
+  padding:20px;
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ABOUT */
+.about{
+  background:#f4faff;
+  padding:26px;
+  border-radius:24px;
+  line-height:1.9;
+  color:#555;
+}
+
+/* CONTACT */
+.contact{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.contact a{
+  text-decoration:none;
+  padding:12px 30px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#b7dcff,#eaf6ff);
+  color:#245f96;
+  transition:0.3s;
+}
+
+.contact a:hover{
+  transform:translateY(-4px);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:13px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <h2>Sera</h2>
+  <div class="menu-btn" onclick="toggleMenu()">⋮</div>
+</div>
+
+<!-- DROPDOWN MENU -->
+<div class="dropdown" id="menu">
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#biodata" onclick="toggleMenu()">Biodata</a>
+  <a href="#about" onclick="toggleMenu()">Tentang Saya</a>
+  <a href="#contact" onclick="toggleMenu()">Kontak</a>
+</div>
+
+<input type="file" id="uploadFoto" hidden accept="image/*">
+
+<!-- HOME -->
+<section id="home" class="home">
+  <div class="photo">
+    <img src="sera.jpg" id="fotoProfil">
+  </div>
+  <div>
+    <h1>Siti Sera Asmanih</h1>
+    <p>Pelajar SMK | Teknik Komputer dan Jaringan</p>
+  </div>
+</section>
+
+<!-- BIODATA -->
+<section id="biodata">
+  <h2>Biodata</h2>
+  <div class="cards">
+    <div class="card">Kelas: X TKJ A</div>
+    <div class="card">Sekolah: SMK</div>
+    <div class="card">Hobi: Memasak</div>
+    <div class="card">Cita-cita: Profesional IT</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>Tentang Saya</h2>
+  <div class="about">
+    Saya adalah siswi SMK jurusan Teknik Komputer dan Jaringan (TKJ) yang memiliki
+    minat besar dalam dunia teknologi. Saya senang mempelajari hal baru, khususnya
+    yang berkaitan dengan komputer dan jaringan. Saya juga memiliki hobi memasak
+    yang melatih kreativitas dan ketelitian.
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Kontak</h2>
+  <div class="contact">
+    <a href="https://wa.me/083115291768">WhatsApp</a>
+    <a href="#">Instagram</a>
+    <a href="sitisera@gmail.com">Email</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Biodata Diri
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('active');
+}
+
+document.getElementById('uploadFoto').addEventListener('change',function(e){
+  const file=e.target.files[0];
+  if(file){
+    document.getElementById('fotoProfil').src=URL.createObjectURL(file);
+  }
+});
+</script>
+
+</body>
+</html>
